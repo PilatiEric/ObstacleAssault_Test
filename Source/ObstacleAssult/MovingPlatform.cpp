@@ -17,7 +17,16 @@ void AMovingPlatform::BeginPlay()
 	Super::BeginPlay();
 
 	UE_LOG(LogTemp, Display, TEXT("MovingPlatform BeginPlay Now"));
-	
+
+	int MyInt = 100;
+	MyInt = 50;
+
+	bool MyBool = true;
+
+	//Putting the f at the end signifies it's a float
+	float MyFloat = 3.33f;
+
+	FString MyString = "This THING!";
 }
 
 // Called every frame
