@@ -16,7 +16,7 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Display, TEXT("THE MOVING PLATFORM EXISTS!"));
+	UE_LOG(LogTemp, Display, TEXT("MovingPlatform BeginPlay Now"));
 	
 }
 
