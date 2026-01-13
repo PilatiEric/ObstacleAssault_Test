@@ -12,6 +12,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMovingPlatform() {}
 
 // ********** Begin Cross Module References ********************************************************
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 OBSTACLEASSULT_API UClass* Z_Construct_UClass_AMovingPlatform();
 OBSTACLEASSULT_API UClass* Z_Construct_UClass_AMovingPlatform_NoRegister();
@@ -58,13 +59,38 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 		{ "IncludePath", "MovingPlatform.h" },
 		{ "ModuleRelativePath", "MovingPlatform.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MemberFloat_MetaData[] = {
+		{ "Category", "MovingPlatform" },
+		{ "ModuleRelativePath", "MovingPlatform.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MemberInt_MetaData[] = {
+		{ "Category", "MovingPlatform" },
+		{ "ModuleRelativePath", "MovingPlatform.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TestVector_MetaData[] = {
+		{ "Category", "MovingPlatform" },
+		{ "ModuleRelativePath", "MovingPlatform.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_MemberFloat;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_MemberInt;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_TestVector;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMovingPlatform>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_MemberFloat = { "MemberFloat", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, MemberFloat), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MemberFloat_MetaData), NewProp_MemberFloat_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_MemberInt = { "MemberInt", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, MemberInt), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MemberInt_MetaData), NewProp_MemberInt_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_TestVector = { "TestVector", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, TestVector), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TestVector_MetaData), NewProp_TestVector_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMovingPlatform_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_MemberFloat,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_MemberInt,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_TestVector,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMovingPlatform_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMovingPlatform_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AActor,
 	(UObject* (*)())Z_Construct_UPackage__Script_ObstacleAssult,
@@ -76,11 +102,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_AMovingPlatform_Statics
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	nullptr,
+	Z_Construct_UClass_AMovingPlatform_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	0,
+	UE_ARRAY_COUNT(Z_Construct_UClass_AMovingPlatform_Statics::PropPointers),
 	0,
 	0x009001A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMovingPlatform_Statics::Class_MetaDataParams), Z_Construct_UClass_AMovingPlatform_Statics::Class_MetaDataParams)
@@ -101,10 +127,10 @@ AMovingPlatform::~AMovingPlatform() {}
 struct Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 1323969770U) },
+		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 927638582U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_2452375029(TEXT("/Script/ObstacleAssult"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_1974571919(TEXT("/Script/ObstacleAssult"),
 	Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
