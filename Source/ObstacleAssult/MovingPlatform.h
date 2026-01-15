@@ -30,7 +30,7 @@ public:
 	int MemberInt = 10;
 
 	UPROPERTY(EditAnywhere)
-	FVector TestVector = FVector(220.0f, -150.0f, 390.0f);
+	FVector PlatformVector = FVector(220.0f, -150.0f, 390.0f);
 
 	bool IsMovingLeft = true;
 

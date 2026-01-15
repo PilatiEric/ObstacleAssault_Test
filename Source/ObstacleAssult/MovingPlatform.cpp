@@ -16,7 +16,7 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SetActorLocation(TestVector);
+	SetActorLocation(PlatformVector);
 }
 
 // Called every frame
@@ -28,10 +28,10 @@ void AMovingPlatform::Tick(float DeltaTime)
 	{
 		if (IsMovingLeft)
 		{
-			TestVector.X -= 1;
+			PlatformVector.X -= 1;
 
 			//Determine if the platform has reached the end of its path
-			if (FMath::IsNearlyEqual(TestVector.X, -410.0f))
+			if (FMath::IsNearlyEqual(PlatformVector.X, -410.0f))
 			{ 
 				IsMovingLeft = false; 
 				IsPlatformStill = true;
@@ -39,17 +39,17 @@ void AMovingPlatform::Tick(float DeltaTime)
 		}
 		else
 		{
-			TestVector.X += 1;
+			PlatformVector.X += 1;
 
 			//Determine if the platform has reached the end of its path
-			if (FMath::IsNearlyEqual(TestVector.X, 220.0f))
+			if (FMath::IsNearlyEqual(PlatformVector.X, 220.0f))
 			{ 
 				IsMovingLeft = true;
 				IsPlatformStill = true;
 			}
 		}
 
-		SetActorLocation(TestVector);
+		SetActorLocation(PlatformVector);
 	}
 	else
 	{
