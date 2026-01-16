@@ -29,7 +29,12 @@ public:
 	FVector PlatformVector = FVector(220.0f, -150.0f, 390.0f);
 
 	UPROPERTY(EditAnywhere)
-	int MovementSpeed = 60;
+	FVector PlatformVelocity = FVector(0.0f, 0.0f, 0.0f);
+
+
+
+	UPROPERTY(EditAnywhere)
+	int TimeSpeed = 120;
 
 	bool IsMovingLeft = true;
 

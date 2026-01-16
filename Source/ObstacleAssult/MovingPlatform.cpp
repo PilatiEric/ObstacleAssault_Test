@@ -26,12 +26,15 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 	FVector CurrentLocation = GetActorLocation();
 
+	UE_LOG(LogTemp, Display, TEXT("Frame time is: %f"), DeltaTime)
+
 	
 	if (!IsPlatformStill)
 	{
 		if (IsMovingLeft)
 		{
-			CurrentLocation.X -= (MovementSpeed * DeltaTime);
+			//Calculate directional speed according to computer speed
+			CurrentLocation -= (PlatformVelocity * DeltaTime);
 
 			//Determine if the platform has reached the end of its path
 			if (FMath::IsWithin(CurrentLocation.X, -420.0f, -410.0f))
@@ -42,7 +45,8 @@ void AMovingPlatform::Tick(float DeltaTime)
 		}
 		else
 		{
-			CurrentLocation.X += (MovementSpeed * DeltaTime);
+			//Calculate directional speed according to computer speed
+			CurrentLocation += (PlatformVelocity * DeltaTime);
 
 			//Determine if the platform has reached the end of its path
 			if (FMath::IsWithin(CurrentLocation.X, 220.0f, 230.0f))
@@ -56,7 +60,7 @@ void AMovingPlatform::Tick(float DeltaTime)
 	}
 	else
 	{
-		PausePlatform += (MovementSpeed * DeltaTime);
+		PausePlatform += (TimeSpeed * DeltaTime);
 
 		//Determine if time platform has paused is up
 		if (FMath::IsWithin(PausePlatform, 150.0f, 160.0f))
