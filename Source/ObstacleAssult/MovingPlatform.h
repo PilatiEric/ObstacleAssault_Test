@@ -23,14 +23,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere)
-	float MemberFloat = 10.0f;
 
-	UPROPERTY(VisibleAnywhere)
-	int MemberInt = 10;
 
 	UPROPERTY(EditAnywhere)
 	FVector PlatformVector = FVector(220.0f, -150.0f, 390.0f);
+
+	UPROPERTY(EditAnywhere)
+	int MovementSpeed = 60;
 
 	bool IsMovingLeft = true;
 

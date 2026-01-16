@@ -23,40 +23,43 @@ void AMovingPlatform::BeginPlay()
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	FVector CurrentLocation = GetActorLocation();
+
 	
 	if (!IsPlatformStill)
 	{
 		if (IsMovingLeft)
 		{
-			PlatformVector.X -= 1;
+			CurrentLocation.X -= (MovementSpeed * DeltaTime);
 
 			//Determine if the platform has reached the end of its path
-			if (FMath::IsNearlyEqual(PlatformVector.X, -410.0f))
-			{ 
+			if (FMath::IsWithin(CurrentLocation.X, -420.0f, -410.0f))
+			{
 				IsMovingLeft = false; 
 				IsPlatformStill = true;
 			}
 		}
 		else
 		{
-			PlatformVector.X += 1;
+			CurrentLocation.X += (MovementSpeed * DeltaTime);
 
 			//Determine if the platform has reached the end of its path
-			if (FMath::IsNearlyEqual(PlatformVector.X, 220.0f))
+			if (FMath::IsWithin(CurrentLocation.X, 220.0f, 230.0f))
 			{ 
 				IsMovingLeft = true;
 				IsPlatformStill = true;
 			}
 		}
 
-		SetActorLocation(PlatformVector);
+		SetActorLocation(CurrentLocation);
 	}
 	else
 	{
-		PausePlatform += 1.0f;
+		PausePlatform += (MovementSpeed * DeltaTime);
 
 		//Determine if time platform has paused is up
-		if (FMath::IsNearlyEqual(PausePlatform, 150.0f))
+		if (FMath::IsWithin(PausePlatform, 150.0f, 160.0f))
 		{
 			PausePlatform = 0.0f;
 			IsPlatformStill = false;
