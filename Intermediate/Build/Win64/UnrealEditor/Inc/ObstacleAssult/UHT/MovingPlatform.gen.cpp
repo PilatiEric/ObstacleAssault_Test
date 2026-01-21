@@ -59,6 +59,10 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 		{ "IncludePath", "MovingPlatform.h" },
 		{ "ModuleRelativePath", "MovingPlatform.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DistanceMoved_MetaData[] = {
+		{ "Category", "MovingPlatform" },
+		{ "ModuleRelativePath", "MovingPlatform.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlatformVector_MetaData[] = {
 		{ "Category", "MovingPlatform" },
 		{ "ModuleRelativePath", "MovingPlatform.h" },
@@ -72,6 +76,7 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 		{ "ModuleRelativePath", "MovingPlatform.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DistanceMoved;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_PlatformVector;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_PlatformVelocity;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_TimeSpeed;
@@ -82,10 +87,12 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_DistanceMoved = { "DistanceMoved", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, DistanceMoved), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DistanceMoved_MetaData), NewProp_DistanceMoved_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_PlatformVector = { "PlatformVector", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, PlatformVector), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlatformVector_MetaData), NewProp_PlatformVector_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_PlatformVelocity = { "PlatformVelocity", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, PlatformVelocity), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlatformVelocity_MetaData), NewProp_PlatformVelocity_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_TimeSpeed = { "TimeSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, TimeSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TimeSpeed_MetaData), NewProp_TimeSpeed_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMovingPlatform_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_DistanceMoved,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_PlatformVector,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_PlatformVelocity,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_TimeSpeed,
@@ -127,10 +134,10 @@ AMovingPlatform::~AMovingPlatform() {}
 struct Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 1016026402U) },
+		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 1118069148U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_4144603503(TEXT("/Script/ObstacleAssult"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_3108372502(TEXT("/Script/ObstacleAssult"),
 	Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

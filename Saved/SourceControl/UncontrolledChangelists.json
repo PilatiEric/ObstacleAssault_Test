@@ -6,7 +6,8 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"C:/Users/screa/OneDrive/Desktop/game_dev/unreal/CppCourseProjects/UnrealLessons/2_Obstacle_Assault/ObstacleAssult/Content/TestLevel.umap",
-				"C:/Users/screa/OneDrive/Desktop/game_dev/unreal/CppCourseProjects/UnrealLessons/2_Obstacle_Assault/ObstacleAssult/Content/MyStuff/TestLevel.umap"
+				"C:/Users/screa/OneDrive/Desktop/game_dev/unreal/CppCourseProjects/UnrealLessons/2_Obstacle_Assault/ObstacleAssult/Content/MyStuff/TestLevel.umap",
+				"C:/Users/screa/OneDrive/Desktop/game_dev/unreal/CppCourseProjects/UnrealLessons/2_Obstacle_Assault/ObstacleAssult/Content/MyStuff/BP_MovingPlatform.uasset"
 			]
 		}
 	]

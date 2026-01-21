@@ -23,6 +23,14 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void MovePlatform(float DeltaTime);
+
+	UPROPERTY(VisibleAnywhere)
+	float DistanceMoved = 0.0f;
+
+
+	FVector StartLocation;
+
 
 
 	UPROPERTY(EditAnywhere)

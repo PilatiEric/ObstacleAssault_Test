@@ -16,7 +16,7 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SetActorLocation(PlatformVector);
+	StartLocation = GetActorLocation();
 }
 
 // Called every frame
@@ -24,50 +24,61 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	MovePlatform(DeltaTime);
+}
+
+void AMovingPlatform::MovePlatform(float DeltaTime)
+{
 	FVector CurrentLocation = GetActorLocation();
+
+	SetActorLocation(CurrentLocation);
+
+	DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
 
 	UE_LOG(LogTemp, Display, TEXT("Frame time is: %f"), DeltaTime)
 
-	
-	if (!IsPlatformStill)
-	{
-		if (IsMovingLeft)
-		{
-			//Calculate directional speed according to computer speed
-			CurrentLocation -= (PlatformVelocity * DeltaTime);
 
-			//Determine if the platform has reached the end of its path
-			if (FMath::IsWithin(CurrentLocation.X, -420.0f, -410.0f))
+		if (!IsPlatformStill)
+		{
+			if (IsMovingLeft)
 			{
-				IsMovingLeft = false; 
-				IsPlatformStill = true;
+				//Calculate directional speed according to computer speed
+				CurrentLocation -= (PlatformVelocity * DeltaTime);
+
+				//Determine if the platform has reached the end of its path
+				if (FMath::IsWithin(CurrentLocation.X, -420.0f, -410.0f))
+				{
+					IsMovingLeft = false;
+					IsPlatformStill = true;
+				}
 			}
+			else
+			{
+				//Calculate directional speed according to computer speed
+				CurrentLocation += (PlatformVelocity * DeltaTime);
+
+				//Determine if the platform has reached the end of its path
+				if (FMath::IsWithin(CurrentLocation.X, 220.0f, 230.0f))
+				{
+					IsMovingLeft = true;
+					IsPlatformStill = true;
+				}
+			}
+
+			SetActorLocation(CurrentLocation);
 		}
 		else
 		{
-			//Calculate directional speed according to computer speed
-			CurrentLocation += (PlatformVelocity * DeltaTime);
+			PausePlatform += (TimeSpeed * DeltaTime);
 
-			//Determine if the platform has reached the end of its path
-			if (FMath::IsWithin(CurrentLocation.X, 220.0f, 230.0f))
-			{ 
-				IsMovingLeft = true;
-				IsPlatformStill = true;
+			//Determine if time platform has paused is up
+			if (FMath::IsWithin(PausePlatform, 150.0f, 160.0f))
+			{
+				PausePlatform = 0.0f;
+				IsPlatformStill = false;
 			}
 		}
-
-		SetActorLocation(CurrentLocation);
-	}
-	else
-	{
-		PausePlatform += (TimeSpeed * DeltaTime);
-
-		//Determine if time platform has paused is up
-		if (FMath::IsWithin(PausePlatform, 150.0f, 160.0f))
-		{
-			PausePlatform = 0.0f;
-			IsPlatformStill = false;
-		}
-	}
 }
+
+
 
