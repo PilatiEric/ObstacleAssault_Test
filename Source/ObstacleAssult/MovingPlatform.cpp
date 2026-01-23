@@ -31,53 +31,39 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 {
 	FVector CurrentLocation = GetActorLocation();
 
-	SetActorLocation(CurrentLocation);
-
 	DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
 
-	UE_LOG(LogTemp, Display, TEXT("Frame time is: %f"), DeltaTime)
 
+	if (!IsPlatformStill)
+	{
+		//Calculate directional speed according to computer speed
+		CurrentLocation -= (PlatformVelocity * DeltaTime);
 
-		if (!IsPlatformStill)
+		//Determine if the platform has reached the end of its path
+		if (DistanceMoved > MoveDistance)
 		{
-			if (IsMovingLeft)
-			{
-				//Calculate directional speed according to computer speed
-				CurrentLocation -= (PlatformVelocity * DeltaTime);
+			float OvershootAmount = DistanceMoved - MoveDistance;
+			FString Name = GetName();
+			UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *Name, OvershootAmount)
 
-				//Determine if the platform has reached the end of its path
-				if (FMath::IsWithin(CurrentLocation.X, -420.0f, -410.0f))
-				{
-					IsMovingLeft = false;
-					IsPlatformStill = true;
-				}
-			}
-			else
-			{
-				//Calculate directional speed according to computer speed
-				CurrentLocation += (PlatformVelocity * DeltaTime);
-
-				//Determine if the platform has reached the end of its path
-				if (FMath::IsWithin(CurrentLocation.X, 220.0f, 230.0f))
-				{
-					IsMovingLeft = true;
-					IsPlatformStill = true;
-				}
-			}
-
-			SetActorLocation(CurrentLocation);
+			IsPlatformStill = true;
+			PlatformVelocity *= -1.f;
+			StartLocation = CurrentLocation;
 		}
-		else
+
+		SetActorLocation(CurrentLocation);
+	}
+	else
+	{
+		PausePlatform += (TimeSpeed * DeltaTime);
+
+		//Determine if time platform has paused is up
+		if (PausePlatform > PauseTime)
 		{
-			PausePlatform += (TimeSpeed * DeltaTime);
-
-			//Determine if time platform has paused is up
-			if (FMath::IsWithin(PausePlatform, 150.0f, 160.0f))
-			{
-				PausePlatform = 0.0f;
-				IsPlatformStill = false;
-			}
+			PausePlatform = 0.0f;
+			IsPlatformStill = false;
 		}
+	}
 }
 
 

@@ -26,27 +26,29 @@ public:
 	void MovePlatform(float DeltaTime);
 
 	UPROPERTY(VisibleAnywhere)
-	float DistanceMoved = 0.0f;
+	float DistanceMoved = 0.f;
 
+	UPROPERTY(EditAnywhere)
+	float MoveDistance = 0.f;
 
 	FVector StartLocation;
 
 
 
 	UPROPERTY(EditAnywhere)
-	FVector PlatformVector = FVector(220.0f, -150.0f, 390.0f);
-
-	UPROPERTY(EditAnywhere)
-	FVector PlatformVelocity = FVector(0.0f, 0.0f, 0.0f);
+	FVector PlatformVelocity = FVector(0.f, 0.f, 0.f);
 
 
 
 	UPROPERTY(EditAnywhere)
 	int TimeSpeed = 120;
 
+	UPROPERTY(EditAnywhere)
+	float PauseTime = 0.f;
+
 	bool IsMovingLeft = true;
 
 	bool IsPlatformStill = false;
-	float PausePlatform = 0.0f;
+	float PausePlatform = 0.f;
 
 };
