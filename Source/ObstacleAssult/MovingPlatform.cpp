@@ -29,29 +29,36 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 void AMovingPlatform::MovePlatform(float DeltaTime)
 {
-	FVector CurrentLocation = GetActorLocation();
-
-	DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
 
 
 	if (!IsPlatformStill)
 	{
+		FVector CurrentLocation = GetActorLocation();
+
 		//Calculate directional speed according to computer speed
-		CurrentLocation -= (PlatformVelocity * DeltaTime);
+		CurrentLocation += (PlatformVelocity * DeltaTime);
+
+		SetActorLocation(CurrentLocation);
+
+		DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
 
 		//Determine if the platform has reached the end of its path
-		if (DistanceMoved > MoveDistance)
+		if (DistanceMoved >= MoveDistance)
 		{
 			float OvershootAmount = DistanceMoved - MoveDistance;
 			FString Name = GetName();
-			UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *Name, OvershootAmount)
+			UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *Name, OvershootAmount);
+
+			//Correct Overshoot
+			FVector MoveDirection = PlatformVelocity.GetSafeNormal();
+			FVector NewStartLocation = StartLocation + MoveDirection * MoveDistance;
+			SetActorLocation(NewStartLocation);
+			StartLocation = NewStartLocation;
 
 			IsPlatformStill = true;
 			PlatformVelocity *= -1.f;
 			StartLocation = CurrentLocation;
 		}
-
-		SetActorLocation(CurrentLocation);
 	}
 	else
 	{

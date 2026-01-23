@@ -44,7 +44,7 @@ public:
 	int TimeSpeed = 120;
 
 	UPROPERTY(EditAnywhere)
-	float PauseTime = 0.f;
+	float PauseTime = 150.f;
 
 	bool IsMovingLeft = true;
 
