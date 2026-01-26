@@ -10,8 +10,8 @@ UCLASS()
 class OBSTACLEASSULT_API AMovingPlatform : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AMovingPlatform();
 
@@ -19,15 +19,22 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	void MovePlatform(float DeltaTime);
 
+	//THIS IS ONE OF THE NEW FUNCTIONS
+	void CalculateOvershoot();
+
+	//THIS IS ONE OF THE NEW FUNCTIONS
+	void CorrectOvershoot();
+
 	UPROPERTY(VisibleAnywhere)
 	float DistanceMoved = 0.f;
 
+	//Determines the length of the platform's path
 	UPROPERTY(EditAnywhere)
 	float MoveDistance = 0.f;
 
@@ -39,14 +46,14 @@ public:
 	FVector PlatformVelocity = FVector(0.f, 0.f, 0.f);
 
 
-
+	//Determines how quickly the timer changes
 	UPROPERTY(EditAnywhere)
 	int TimeSpeed = 120;
 
+	//Determines how long the platform stays still at each end of its path
 	UPROPERTY(EditAnywhere)
 	float PauseTime = 150.f;
 
-	bool IsMovingLeft = true;
 
 	bool IsPlatformStill = false;
 	float PausePlatform = 0.f;

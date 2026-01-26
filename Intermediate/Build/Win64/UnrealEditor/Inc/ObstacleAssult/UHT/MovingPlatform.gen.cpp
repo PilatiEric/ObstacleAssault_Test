@@ -65,7 +65,13 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveDistance_MetaData[] = {
 		{ "Category", "MovingPlatform" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Determines the length of the platform's path\n" },
+#endif
 		{ "ModuleRelativePath", "MovingPlatform.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Determines the length of the platform's path" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlatformVelocity_MetaData[] = {
 		{ "Category", "MovingPlatform" },
@@ -73,11 +79,23 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TimeSpeed_MetaData[] = {
 		{ "Category", "MovingPlatform" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Determines how quickly the timer changes\n" },
+#endif
 		{ "ModuleRelativePath", "MovingPlatform.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Determines how quickly the timer changes" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PauseTime_MetaData[] = {
 		{ "Category", "MovingPlatform" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Determines how long the platform stays still at each end of its path\n" },
+#endif
 		{ "ModuleRelativePath", "MovingPlatform.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Determines how long the platform stays still at each end of its path" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_DistanceMoved;
@@ -141,10 +159,10 @@ AMovingPlatform::~AMovingPlatform() {}
 struct Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 3105427593U) },
+		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 3806821594U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_2770822809(TEXT("/Script/ObstacleAssult"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_2915121713(TEXT("/Script/ObstacleAssult"),
 	Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_MovingPlatform_h__Script_ObstacleAssult_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

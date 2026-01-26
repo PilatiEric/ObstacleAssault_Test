@@ -29,35 +29,30 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 void AMovingPlatform::MovePlatform(float DeltaTime)
 {
-
-
 	if (!IsPlatformStill)
 	{
-		FVector CurrentLocation = GetActorLocation();
-
-		//Calculate directional speed according to computer speed
-		CurrentLocation += (PlatformVelocity * DeltaTime);
-
-		SetActorLocation(CurrentLocation);
+		FVector CurrentLocation = GetActorLocation();		
 
 		DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
 
 		//Determine if the platform has reached the end of its path
 		if (DistanceMoved >= MoveDistance)
 		{
-			float OvershootAmount = DistanceMoved - MoveDistance;
-			FString Name = GetName();
-			UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *Name, OvershootAmount);
+			//THIS IS ONE OF THE NEW FUNCTIONS
+			CalculateOvershoot();
 
-			//Correct Overshoot
-			FVector MoveDirection = PlatformVelocity.GetSafeNormal();
-			FVector NewStartLocation = StartLocation + MoveDirection * MoveDistance;
-			SetActorLocation(NewStartLocation);
-			StartLocation = NewStartLocation;
+			//THIS IS ONE OF THE NEW FUNCTIONS
+			CorrectOvershoot();
 
 			IsPlatformStill = true;
 			PlatformVelocity *= -1.f;
-			StartLocation = CurrentLocation;
+		}
+		else
+		{
+			//Calculate directional speed according to computer speed
+			CurrentLocation += (PlatformVelocity * DeltaTime);
+
+			SetActorLocation(CurrentLocation);
 		}
 	}
 	else
@@ -71,6 +66,27 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 			IsPlatformStill = false;
 		}
 	}
+}
+
+
+//THIS IS ONE OF THE NEW FUNCTIONS
+//Calculates how much the platform overshot the end of the path and displays that and the name of the particular platform object in the UE log
+void AMovingPlatform::CalculateOvershoot()
+{
+	float OvershootAmount = DistanceMoved - MoveDistance;
+	FString Name = GetName();
+	UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *Name, OvershootAmount);
+}
+
+
+//THIS IS ONE OF THE NEW FUNCTIONS
+//Calculates the precise coordinates for the end of the plaform's path and sets as the platform's current location
+void AMovingPlatform::CorrectOvershoot()
+{
+	FVector MoveDirection = PlatformVelocity.GetSafeNormal();
+	FVector NewStartLocation = StartLocation + (MoveDirection * MoveDistance);
+	SetActorLocation(NewStartLocation);
+	StartLocation = NewStartLocation;
 }
 
 
