@@ -25,6 +25,7 @@ void AMovingPlatform::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	MovePlatform(DeltaTime);
+	RotatePlatform(DeltaTime);
 }
 
 void AMovingPlatform::MovePlatform(float DeltaTime)
@@ -38,10 +39,8 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 		//Determine if the platform has reached the end of its path
 		if (DistanceMoved >= MoveDistance)
 		{
-			//THIS IS ONE OF THE NEW FUNCTIONS
 			CalculateOvershoot();
 
-			//THIS IS ONE OF THE NEW FUNCTIONS
 			CorrectOvershoot();
 
 			IsPlatformStill = true;
@@ -51,7 +50,6 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 		{
 			//Calculate directional speed according to computer speed
 			CurrentLocation += (PlatformVelocity * DeltaTime);
-
 			SetActorLocation(CurrentLocation);
 		}
 	}
@@ -69,25 +67,34 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 }
 
 
-//THIS IS ONE OF THE NEW FUNCTIONS
 //Calculates how much the platform overshot the end of the path and displays that and the name of the particular platform object in the UE log
 void AMovingPlatform::CalculateOvershoot()
 {
-	float OvershootAmount = DistanceMoved - MoveDistance;
-	FString Name = GetName();
-	UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *Name, OvershootAmount);
+	float overshootAmount = DistanceMoved - MoveDistance;
+	FString name = GetName();
+	UE_LOG(LogTemp, Display, TEXT("%s overshot by %f"), *name, overshootAmount);
 }
 
 
-//THIS IS ONE OF THE NEW FUNCTIONS
 //Calculates the precise coordinates for the end of the plaform's path and sets as the platform's current location
 void AMovingPlatform::CorrectOvershoot()
 {
-	FVector MoveDirection = PlatformVelocity.GetSafeNormal();
-	FVector NewStartLocation = StartLocation + (MoveDirection * MoveDistance);
-	SetActorLocation(NewStartLocation);
-	StartLocation = NewStartLocation;
+	FVector moveDirection = PlatformVelocity.GetSafeNormal();
+	FVector newStartLocation = StartLocation + (moveDirection * MoveDistance);
+	SetActorLocation(newStartLocation);
+	StartLocation = newStartLocation;
 }
+
+void AMovingPlatform::RotatePlatform(float DeltaTime)
+{
+
+	//Calculate rotational speed according to computer speed
+	FRotator rotationToAdd = RotationVelocity * DeltaTime;
+
+	AddActorLocalRotation(rotationToAdd);
+}
+
+
 
 
 

@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class AObstacleAssultGameMode **************************************************
 OBSTACLEASSULT_API UClass* Z_Construct_UClass_AObstacleAssultGameMode_NoRegister();
 
-#define FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAObstacleAssultGameMode(); \
 	friend struct Z_Construct_UClass_AObstacleAssultGameMode_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(AObstacleAssultGameMode)
 
 
-#define FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AObstacleAssultGameMode(AObstacleAssultGameMode&&) = delete; \
 	AObstacleAssultGameMode(const AObstacleAssultGameMode&) = delete; \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~AObstacleAssultGameMode();
 
 
-#define FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_12_PROLOG
-#define FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_GENERATED_BODY \
+#define FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_12_PROLOG
+#define FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_ENHANCED_CONSTRUCTORS \
+	FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_INCLASS_NO_PURE_DECLS \
+	FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,6 +55,6 @@ class AObstacleAssultGameMode;
 // ********** End Class AObstacleAssultGameMode ****************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_screa_OneDrive_Desktop_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h
+#define CURRENT_FILE_ID FID_game_dev_unreal_CppCourseProjects_UnrealLessons_2_Obstacle_Assault_ObstacleAssult_Source_ObstacleAssult_ObstacleAssultGameMode_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

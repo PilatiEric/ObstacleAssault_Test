@@ -25,11 +25,11 @@ public:
 
 	void MovePlatform(float DeltaTime);
 
-	//THIS IS ONE OF THE NEW FUNCTIONS
 	void CalculateOvershoot();
 
-	//THIS IS ONE OF THE NEW FUNCTIONS
 	void CorrectOvershoot();
+
+	void RotatePlatform(float DeltaTime);
 
 	UPROPERTY(VisibleAnywhere)
 	float DistanceMoved = 0.f;
@@ -42,8 +42,13 @@ public:
 
 
 
+
+
 	UPROPERTY(EditAnywhere)
 	FVector PlatformVelocity = FVector(0.f, 0.f, 0.f);
+
+	UPROPERTY(EditAnywhere)
+	FRotator RotationVelocity = FRotator(0.f, 0.f, 0.f);
 
 
 	//Determines how quickly the timer changes

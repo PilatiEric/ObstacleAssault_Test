@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\screa\\OneDrive\\Desktop\\game_dev\\unreal\\CppCourseProjects\\UnrealLessons\\2_Obstacle_Assault\\ObstacleAssult\\Source\\ObstacleAssult\\ObstacleAssult.Build.cs",
-		"C:\\Users\\screa\\OneDrive\\Desktop\\game_dev\\unreal\\CppCourseProjects\\UnrealLessons\\2_Obstacle_Assault\\ObstacleAssult\\Source\\ObstacleAssult.Target.cs",
-		"C:\\Users\\screa\\OneDrive\\Desktop\\game_dev\\unreal\\CppCourseProjects\\UnrealLessons\\2_Obstacle_Assault\\ObstacleAssult\\Source\\ObstacleAssultEditor.Target.cs"
+		"C:\\game_dev\\unreal\\CppCourseProjects\\UnrealLessons\\2_Obstacle_Assault\\ObstacleAssult\\Source\\ObstacleAssult\\ObstacleAssult.Build.cs",
+		"C:\\game_dev\\unreal\\CppCourseProjects\\UnrealLessons\\2_Obstacle_Assault\\ObstacleAssult\\Source\\ObstacleAssult.Target.cs",
+		"C:\\game_dev\\unreal\\CppCourseProjects\\UnrealLessons\\2_Obstacle_Assault\\ObstacleAssult\\Source\\ObstacleAssultEditor.Target.cs"
 	],
 	"EngineVersion": "5.6.1"
 }
